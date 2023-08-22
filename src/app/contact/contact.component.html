@@ -1,0 +1,90 @@
+<div class="image-container">
+    <img src="./assets/4698f4e822cb4b3b91ec34509558037b.jpg" alt="Background Image" />
+    <div class="image-text">
+      <h1 class="text-dark">Contact Us</h1>
+      <img src="assets/support.png" class="w-25 p-5" />
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row mt-5 mb-5">
+      <div class="col-lg-6 col-md-12 mt-4 contac">
+        <h1>SAY SOMETHING</h1>
+        <p class="text-muted ms-1">Leave us a message</p>
+        <div id="loadingOverlay" style="display: none">
+          <div class="loading-content">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <p>Loading...</p>
+          </div>
+        </div>
+
+        <form id="myForm">
+          <input type="email" id="email" class="form-control mt-2" placeholder="Write your email" />
+          <input type="text" id="subject" class="form-control mt-2" placeholder="Write subject" />
+          <textarea class="form-control lh-lg-5 mt-2" id="message" placeholder="Write your message..." rows="4"
+            cols="50"></textarea>
+          <button class="btn mt-3 w-100" type="button" onclick="sendEmail()">
+            SEND MESSAGE
+          </button>
+        </form>
+      </div>
+      <div class="col-lg-6 col-md-12 mt-4">
+        <div class="container1">
+          <h1>Location</h1>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.54769253225!2d90.42833757514336!3d23.763503588273633!2m3!1f0!2f0!3f0!
+                    3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c78ab9d83ac9%3A0x66e9c1251c18fc2!2sBacBon%20limited!5e0!3m2!1sbn!2sbd!4v1689888761204!5m2!1sbn!2sbd"
+            width="600" class="rounded-2" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="d-flex mt-4">
+          <i class="bi bi-geo-alt ms-5"></i>
+          <h5 class="ms-2"> <i class="fa-solid fa-house"></i>
+            House # 13 (5th Floor), Block-C, Main Road, Banasree, Rampura,
+            Dhaka-1219.
+          </h5>
+        </div>
+        <div class="d-flex mt-2">
+          <i class="bi bi-phone ms-5"></i>
+          <h5 class="ms-2"><i class="fa-solid fa-phone"></i> 09666 793 793, +88 02 8396601</h5>
+        </div>
+        <div class="d-flex mt-2">
+          <i class="bi bi-envelope ms-5"></i>
+          <h5 class="ms-2"><i class="fa-solid fa-envelope"></i> info@bacbonltd.com</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="position-relative">
+    <div class="container sub">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-8">
+          <div class="card d-flex rounded-4 border-0 bg-secondary-subtle shadow-lg">
+            <div class="row d-flex align-items-center p-3">
+              <div class="col-md-4">
+                <h1 class="fw-bold">Newsletter</h1>
+                <p class="text-secondary fw-lighter fs-6">
+                  Subscribe and get notification from us
+                </p>
+              </div>
+              <div class="col-md-8">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Your Email:" aria-label="Recipient's username"
+                    aria-describedby="basic-addon2" />
+                  <div class="input-group-append">
+                    <button class="btn btn-primary rounded-0" type="button">
+                      Subscribe
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,77 @@
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
+  }
+  
+  .content-container {
+    padding-top: 70px; /* Adjust the padding value as needed */
+  }
+  .navbar-nav .nav-link {
+    color: black;
+    font-weight: 500;
+    /* font-size: 18px; */
+  }
+  .navbar {
+  background-color: white;
+}
+.navbar-nav .nav-link {
+  color: rgb(33, 127, 203);
+}
+.navbar-nav .nav-link:hover {
+  color: white;
+}
+
+.logo{
+  max-width: 120px;
+  height: auto;
+}
+.nav-item img{
+  width: 40px;
+  height: 40px;
+}
+.certified{
+  position: relative;
+  left: 72px;}
+.first{
+  height: 72px;
+}
+.first p{
+font-size: 13px;
+}
+.first li p{
+  font-size: 13px;
+}
+
+
+.dropdown-menu-right {
+  left: 12rem;
+}
+/* Customize the appearance of the dropdown items */
+.dropdown-item {
+  padding: 8px 12px; 
+  color: #333; 
+  font-size: 14px; 
+}
+.drop{
+  font-weight: 350;
+  font-size: 15px;
+}
+
+@media (max-width: 767.98px) {
+  .top-0,
+  .start-0,
+  .translate-middle {
+    display:contents;
+  }
+  .nav2{
+    /* padding-top: 115px; */
+    padding: 0;
+    margin: 0;
+  }
+  .team{
+    text-align: center;
+  }
+  .camera3{
+    flex-direction: row;
+  }
+}
