@@ -7,7 +7,7 @@
     </ol>
     <!-- Carousel Slides -->
     <div class="carousel-inner">
-        <div class="carousel-item active">
+        <div class="carousel-item active" *ngFor="let content of titleList">
             <div class="main-banner2 h-100">
                 <div class="dark-overlay">
                     <div class="container">
@@ -20,12 +20,9 @@
                                                     class="fa-solid fa-play text-white fs-4"></i></span>
                                         </a>
                                     </div>
-                                    <h6>The Innovative And Seamless Collaboration Tool You Need.</h6>
-                                    <h1 class=""><span class="text-decoration-none text-primary">Interactive</span> LED
-                                        Displays <br>
-                                        With
-                                        Digital Smart <br> Board</h1>
-                                    <a href="#" class="btn btn-primary circled">Talk To An Expert</a>
+                                    <h6>{{content.title}}</h6>
+                                    <h1 class=""><span class="text-decoration-none text-primary"></span>{{content.content}}</h1>
+                                    <a href="{{content.button_link}}" class="btn btn-primary circled">{{content.button_text}}</a>
                                 </div>
                             </div>
                         </div>
@@ -76,10 +73,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 m-0 col-sm-12">
-                <div class="banner-content content-padding white">
-                    <h3 class="text-dark">BACBON Interactive Flat Panel</h3>
-                    <h3 class="text-dark fw-bold">Simple, Smart, Connected</h3>
-                    <img src="assets/Features-1.png" alt="" class="img-fluid mt-4">
+                <div class="banner-content content-padding white" *ngIf="product_image!=null">
+                    <h3 class="text-dark">{{title}}</h3>
+                    <img [src]="'http://localhost:8000/index/' + product_image" alt="" class="img-fluid mt-4">
                 </div>
             </div>
         </div>
@@ -91,14 +87,11 @@
     <div class="container ">
         <div class="row text-center text-white">
             <div class="mt-4">
-                <h3>One Panel for Multiple Applications</h3>
-                <p class="mt-5">BACBON ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                    ullamcorper mattis, pulvinar dapibus leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                    elit
-                    tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                <h3>{{titlePanel}}</h3>
+                <p class="mt-5">{{description}}</p>
             </div>
-            <div class="mt-3">
-                <img src="assets/corporate-image.jpg" alt="" class="img-fluid  w-lg-50 p-5">
+            <div class="mt-3" *ngIf="panel_image!=null">
+                <img [src]="'http://localhost:8000/index/' + panel_image" alt="" class="img-fluid  w-lg-50 p-5">
             </div>
         </div>
     </div>
@@ -107,62 +100,20 @@
 <section class="bg-info-subtle">
     <div class="container py-5">
         <div class="row ">
-            <h3 class="text-center fw-bold mt-5">Complete Solution Provider</h3>
+            <h3 class="text-center fw-bold mt-5">{{titleCSP}}</h3>
         </div>
         <div class="row mt-3">
-            <div class="col-md-3">
-                <div class="card m-3 custom-card bg-info-subtle">
-                    <img src="assets/Screenshot-2023-03-28-105241.png" class="card-img-top" alt="Image 1">
+            <div class="col-md-3 " *ngFor="let csp of solution">
+                <div class="card m-3 custom-card bg-info-subtle" >
+                  <div >
+                    <img  [src]="'http://localhost:8000/csp/' + csp.image" class="card-img-top" alt="Image 1">
+                  </div>
                     <div class="card-body text-center">
-                        <h6 class="fw-bold"> 4 People </h6>
-                        <p class="card-text ">Click edit to change this text. Lorem ipsum dolor sit amet, cctetur
-                            adipiscing elit.
-                            Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. </p>
+                        <h6 class="fw-bold"> {{csp.subtitle}} </h6>
+                        <p class="card-text ">{{csp.description}}</p>
                     </div>
                     <div class=" text-center ">
-                        <button class="btn  bg-dark text-white border-0 rounded-0 " href="">Learn More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card custom-card bg-info-subtle">
-                    <img src="assets/Screenshot-2023-03-28-105241.png" class="card-img-top" alt="Image 1">
-                    <div class="card-body text-center">
-                        <h6 class="fw-bold"> 4 People </h6>
-                        <p class="card-text ">Click edit to change this text. Lorem ipsum dolor sit amet, cctetur
-                            adipiscing elit.
-                            Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. </p>
-                    </div>
-                    <div class=" text-center">
-                        <button class="btn  bg-dark text-white border-0 rounded-0" href="">Learn More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 ">
-                <div class="card custom-card bg-info-subtle">
-                    <img src="assets/Screenshot-2023-03-28-105241.png" class="card-img-top" alt="Image 1">
-                    <div class="card-body text-center">
-                        <h6 class="fw-bold"> 4 People </h6>
-                        <p class="card-text ">Click edit to change this text. Lorem ipsum dolor sit amet, cctetur
-                            adipiscing elit.
-                            Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. </p>
-                    </div>
-                    <div class=" text-center">
-                        <button class="btn  bg-dark text-white border-0 rounded-0" href="">Learn More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card custom-card bg-info-subtle">
-                    <img src="assets/Screenshot-2023-03-28-105241.png" class="card-img-top" alt="Image 1">
-                    <div class="card-body text-center">
-                        <h6 class="fw-bold"> 4 People </h6>
-                        <p class="card-text ">Click edit to change this text. Lorem ipsum dolor sit amet, cctetur
-                            adipiscing elit.
-                            Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. </p>
-                    </div>
-                    <div class=" text-center">
-                        <button class="btn  bg-dark text-white border-0 rounded-0" href="">Learn More</button>
+                        <a class="btn  bg-dark text-white border-0 rounded-0 " href="{{csp.button_link}}">{{csp.button_text}}</a>
                     </div>
                 </div>
             </div>
@@ -171,21 +122,20 @@
 </section>
 
 <section class="mt-5">
-    <div class="container">
+    <div class="container " >
       <div class="row text-center">
-        <h2 class="fw-bold">Education Solution </h2>
-        <p class=" text-secondary">Engage Students Like Never Before</p>
+        <h2 class="fw-bold">{{titleEDU}} </h2>
+        <p class=" text-secondary">{{eduHDescription}}</p>
       </div>
 
       <div class="row d-flex align-items-center justify-content-center p-md-5">
-        <div class="col-md-6">
-          <img src="assets/education-usage-min-1-2048x1463.png" alt="" class="rounded-3 img-fluid">
+        <div class="col-md-6" *ngIf="eduimage!=null">
+          <img [src]="'http://localhost:8000/edu/' + eduimage" alt="" class="rounded-3 img-fluid">
         </div>
         <div class="col-md-6 p-md-5 ">
-          <h1 class="fw-bold">Education Solution </h1>
-          <p class=" text-secondary">4K Resolution | Eye Care Mode | Simple Design <br>
-            Responsive Touch |Rich Class Delivery Software</p>
-          <button class="btn btn-primary">Learn More</button>
+          <h1 class="fw-bold">{{secondTitle}} </h1>
+          <p class=" text-secondary">{{eduDescription}}</p>
+          <a class="btn btn-primary" href="{{eduLink}}">{{eduButtontext}}</a>
         </div>
       </div>
     </div>
@@ -195,29 +145,26 @@
     <div class="container ">
       <div class="row text-center text-white">
         <div class="mt-4">
-          <h2 class="fw-bold">One Feature Products</h2>
-          <p class="mt-5">BACBON ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-            ullamcorper mattis, pulvinar dapibus leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+          <h2 class="fw-bold">{{featureTitle}}</h2>
+          <p class="mt-5">{{featureTitle}}</p>
         </div>
       </div>
 
       <div class="row p-5 d-flex align-items-end">
-        <div class="col-md-3">
-          <img src="assets/camera1.png" alt="" class="img-fluid">
+        <div class="col-md-3"*ngIf="featureLeftImage!=null">
+          <img [src]="'http://localhost:8000/feature_product/' + featureLeftImage" alt="" class="img-fluid">
         </div>
-        <div class="col-md-6">
-          <img src="assets/IFP-with-MaxHub-Camera-Black-BG.png" alt="" class="img-fluid w-100">
+        <div class="col-md-6" *ngIf="featureMainImage!=null">
+          <img  [src]="'http://localhost:8000/feature_product/' + featureMainImage" alt="" class="img-fluid w-100">
         </div>
-        <div class="col-md-3">
-          <img src="assets/projector.png" alt="" class="img-fluid">
+        <div class="col-md-3" *ngIf="featureRightImage!=null">
+          <img [src]="'http://localhost:8000/feature_product/' + featureRightImage" alt="" class="img-fluid">
         </div>
       </div>
       <div class="row text-center">
-        <p class="text-primary ">New Model With High Configuration Hardware</p>
-        <h2 class="fw-bold text-white">One Feature Products</h2>
+        <p class="text-primary ">{{caption}}</p>
         <div>
-          <a class="btn btn-primary">Learn More</a>
+          <a class="btn btn-primary" href="{{featurelink}}">{{featuretext}}</a>
         </div>
       </div>
     </div>
@@ -226,28 +173,28 @@
   <section class="mt-5">
     <div class="container p-md-5">
       <div class="row text-center">
-        <h1 class="fw-bold text-black-75">BacBon Conference Solution with High End Camera</h1>
+        <h1 class="fw-bold text-black-75">{{titleConference}}</h1>
       </div>
       <div class="row d-flex align-items-center">
-        <div class="col-md-6 device p-md-5">
+        <div class="col-md-6 device p-md-5 " *ngIf="masterImage!=null">
           <a href="#">
-            <img src="assets/Maxhub-Camera-with-Text.png" alt="" class="img-fluid border-0 rounded-3">
+            <img [src]="'http://localhost:8000/conference/' + masterImage"  alt="" class="img-fluid border-0 rounded-3">
           </a>
         </div>
         <div class="col-md-6 p-md-5 device col-sm-12">
           <div class="card border-0">
             <div class="d-flex flex-wrap justify-content-center">
-              <div class="col-md-6 col-sm-6 mt-3">
-                <img src="assets/pendrive.png" alt="" class="img-fluid">
+              <div class="col-md-6 col-sm-6 mt-3" *ngIf="subImage1!=null">
+                <img [src]="'http://localhost:8000/conference/' + subImage1" alt="" class="img-fluid">
               </div>
-              <div class="col-md-6 col-sm-6 mt-3">
-                <img src="assets/confarance-cam.png" alt="" class="img-fluid">
+              <div class="col-md-6 col-sm-6 mt-3" *ngIf="subImage2!=null">
+                <img [src]="'http://localhost:8000/conference/' + subImage2" alt="" class="img-fluid">
               </div>
-              <div class="col-md-6 col-sm-6 mt-3">
-                <img src="assets/vebCam.png" alt="" class="img-fluid">
+              <div class="col-md-6 col-sm-6 mt-3" *ngIf="subImage3!=null">
+                <img [src]="'http://localhost:8000/conference/' + subImage3" alt="" class="img-fluid">
               </div>
-              <div class="col-md-6 col-sm-6 mt-3">
-                <img src="assets/desk.png" alt="" class="img-fluid">
+              <div class="col-md-6 col-sm-6 mt-3" *ngIf="subImage4!=null">
+                <img [src]="'http://localhost:8000/conference/' + subImage4" alt="" class="img-fluid">
               </div>
             </div>
           </div>
@@ -257,17 +204,17 @@
   </section>
 
   <section class="mt-5 bg-info-subtle">
-    <div class="container ">
-      <h1 class="fw-bold py-5 text-center">Our Honorable Client</h1>
+    <div class="container">
+      <h1 class="fw-bold py-5 text-center">{{clientTitle}}</h1>
       <div id="carouselExample3" class="carousel slide p-5" data-bs-ride="carousel">
         <div class="carousel-inner ">
           <div class="carousel-item active">
             <div class="container">
-              <div class="row">
-                <div class="col-md-2 ">
-                  <img src="assets/casio-1.png" alt="" class="img-fluid">
+              <div class="row" >
+                <div class="col-md-2 " *ngFor="let img of clienListImage">
+                  <img [src]="'http://localhost:8000/honorable_client/' + img.image"alt="" class="img-fluid">
                 </div>
-                <div class="col-md-2 ">
+                <!-- <div class="col-md-2 ">
                   <img src="assets/bankasia-1.png" alt="" class="img-fluid">
                 </div>
                 <div class="col-md-2 ">
@@ -281,17 +228,17 @@
                 </div>
                 <div class="col-md-2 ">
                   <img src="assets/worldbank-1.png" alt="" class="img-fluid">
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item" *ngIf="clienListImageTwo.length > 0">
             <div class="container">
               <div class="row">
-                <div class="col-md-2 ">
-                  <img src="assets/e-education-1.png" alt="" class="img-fluid">
+                <div class="col-md-2 " *ngFor="let img of clienListImageTwo">
+                  <img [src]="'http://localhost:8000/honorable_client/' + img.image"alt="" class="img-fluid">
                 </div>
-                <div class="col-md-2 ">
+                <!-- <div class="col-md-2 ">
                   <img src="assets/hito-1.png" alt="" class="img-fluid">
                 </div>
                 <div class="col-md-2 ">
@@ -305,7 +252,7 @@
                 </div>
                 <div class="col-md-2 ">
                   <img src="assets/tokyo-1.png" alt="" class="img-fluid">
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -327,30 +274,18 @@
   <section class="mt-5">
     <div class="container">
       <div class="row text-center">
-        <h1 class="fw-bold">Our Team</h1>
+        <h1 class="fw-bold">{{teamTitle}}</h1>
       </div>
-      <div class="row d-flex align-items-center team p-5">
+      <div class="row d-flex align-items-center team p-5" style=" overflow-x: auto; ">
+        <ng-container *ngFor="let tm of teamMember">
         <div class="col-md-1">
-          <img src="assets/User-Avatar-in-Suit-PNG.png" alt="" class="img-fluid">
+          <img [src]="'http://localhost:8000/Our team/' + tm.image" alt="" class="img-fluid" />
         </div>
         <div class="col-md-3">
-          <h3 class="fw-light fs-4">Md Manowar Hossain</h3>
-          <h3 class="fw-light fs-6">Head of Business operations </h3>
+          <h3 class="fw-light fs-4">{{tm.name}}</h3>
+          <h3 class="fw-light fs-6">{{tm.department}}</h3>
         </div>
-        <div class="col-md-1">
-          <img src="assets/User-Avatar-in-Suit-PNG.png" alt="" class="img-fluid">
-        </div>
-        <div class="col-md-3">
-          <h3 class="fw-light fs-4">Md. Muraduzzaman</h3>
-          <h3 class="fw-light fs-6">Head of Smart Solution </h3>
-        </div>
-        <div class="col-md-1">
-          <img src="assets/User-Avatar-in-Suit-PNG.png" alt="" class="img-fluid">
-        </div>
-        <div class="col-md-3">
-          <h3 class="fw-light fs-4">Dipto Shom</h3>
-          <h3 class="fw-light fs-6">IT Manager, Smart Solution </h3>
-        </div>
+      </ng-container>
       </div>
     </div>
   </section>
@@ -358,45 +293,18 @@
   <section class="mt-5">
     <div class="container py-5">
       <div class="text-center">
-        <h1 class="fw-bold">Our Case Studies</h1>
+        <h1 class="fw-bold">{{caseTitle}}</h1>
       </div>
 
       <div class="row p-md-5">
-        <div class="col-md-4">
+        <div class="col-md-4" *ngFor="let case of caseStudies">
           <div class="card border-0">
             <div class=" text-center">
-              <h5 class="fw-bold">Avast Free Message board </h5>
+              <h5 class="fw-bold">{{case.title_name}} </h5>
             </div>
             <div class="card-body text-center">
               <p>
-                Avast free forum is normally an online community website that delivers a wide variety of methods to
-                people. Its content material includes training, FAQs.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card border-0">
-            <div class=" text-center">
-              <h5 class="fw-bold">Virtual Data Area Service Providers — What They Do as well as how to Choose One </h5>
-            </div>
-            <div class="card-body text-center">
-              <p>
-                A VDR is a safeguarded online system that provides an easy way to share sensitive docs. They’re
-                frequently used during the process of legal and
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card border-0">
-            <div class=" text-center">
-              <h5 class="fw-bold">Issues with Antivirus Courses </h5>
-            </div>
-            <div class="card-body text-center">
-              <p>
-                Problems with anti virus programs The industry for malware solutions is, like any other sort of consumer
-                item, faced with a variety of concerns. These
+                {{case.description}}
               </p>
             </div>
           </div>
@@ -410,9 +318,8 @@
     <div class="container">
       <div class="row text-center">
         <div class="banner-content2 ">
-          <h2 class="text-white fw-bold ">What Customers Saying About Bacbon</h2>
-          <p class="text-white fw-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus
-            nec ullamcorper mattis, pulvinar dapibus leo.</p>
+          <h2 class="text-white fw-bold ">{{reviewTitle}}</h2>
+          <p class="text-white fw-bold">{{reviewSubTitle}}</p>
         </div>
       </div>
     </div>
@@ -425,13 +332,13 @@
           <div class="carousel-item active">
             <div class="container">
               <div class="row p-4">
-                <div class="col-md-4 ">
+                <div class="col-md-4 " *ngFor="let rev of review">
                   <div class="card m-3  rounded-3 border-3 border-secondary-subtle shadow">
                     <div class="d-flex justify-content-center align-items-center mt-2">
                       <img src="assets/client1.jpg" alt="" class="rounded-circle client-image">
                     </div>
                     <div class="card-body text-center ">
-                      <h6 class="fw-bold ">Michale Monroee</h6>
+                      <h6 class="fw-bold ">{{rev.name}}</h6>
                       <p class="fw-light">Designer</p>
                     </div>
                     <div class="d-inline-flex text-warning text-center justify-content-center fs-6">
@@ -446,7 +353,7 @@
                     </p>
                   </div>
                 </div>
-                <div class="col-md-4 ">
+                <!-- <div class="col-md-4 ">
                   <div class="card m-3 rounded-3 border-3 border-secondary-subtle shadow">
                     <div class="d-flex justify-content-center align-items-center mt-2">
                       <img src="assets/client2.jpg" alt="" class="rounded-circle client-image">
@@ -487,20 +394,20 @@
                       adipisicing elit. Porro, in.Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, in.
                     </p>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item" *ngIf="reviewTwo.length > 0">
             <div class="container">
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4" *ngFor="let rev of reviewTwo">
                   <div class="card m-3 rounded-3 border-3 border-secondary-subtle shadow">
                     <div class="d-flex justify-content-center align-items-center mt-2">
                       <img src="assets/client1.jpg" alt="" class="rounded-circle client-image">
                     </div>
                     <div class="card-body text-center ">
-                      <h6 class="fw-bold ">Adam Monroee</h6>
+                      <h6 class="fw-bold ">{{rev.name}}</h6>
                       <p class="fw-light">Designer</p>
                     </div>
                     <div class="d-inline-flex text-warning text-center justify-content-center fs-6">
@@ -515,7 +422,7 @@
                     </p>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <!-- <div class="col-md-4">
                   <div class="card m-3 rounded-3 border-3 border-secondary-subtle shadow">
                     <div class="d-flex justify-content-center align-items-center mt-2">
                       <img src="assets/client3.jpg" alt="" class="rounded-circle client-image">
@@ -556,7 +463,7 @@
                       adipisicing elit. Porro, in.Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, in.
                     </p>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
